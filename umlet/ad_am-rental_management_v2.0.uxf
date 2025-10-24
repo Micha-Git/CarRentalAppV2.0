@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>fontsize=18
+</help_text>
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>45</x>
+      <y>63</y>
+      <w>261</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>AM-RentalManagementV2.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>549</x>
+      <y>315</y>
+      <w>171</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application entity&gt;&gt;
+Rental
+--
+id: string
+startDate: Date
+endDate: Date
+car: RentableCar
+price : Float
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>45</x>
+      <y>315</y>
+      <w>423</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application entity&gt;&gt;
+Customer
+--
+id: String
+name: String
+rentals: Rental[]
+--
+rentCar(customerId:String,
+             startDate: Date, endDate: Date, vin: Vin): Rental
+cancelRental(customerId:String, id: String): Boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>459</x>
+      <y>378</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>fontsize=10
+lt=-
+m1=1
+m2=0..*
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>711</x>
+      <y>360</y>
+      <w>153</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>fontsize=10
+lt=-
+m1=1
+m2=0..*
+has &gt;</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>45</x>
+      <y>117</y>
+      <w>603</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;collection&gt;&gt;
+Rentals
+--
+rentals: Rental[]
+--
+listAvailableCars(startDate: Date, endDate: Date, location: String): RentableCar[]
+listCarRentals(vin: Vin): Rental[]
+listCustomerRentals(customerID: String): Rental[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>675</x>
+      <y>414</y>
+      <w>279</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>290.0;10.0;290.0;90.0;10.0;90.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>243</y>
+      <w>36</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>fontsize=10
+lt=-
+m1=1
+m2=0..*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>117</y>
+      <w>441</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;collection&gt;&gt;
+RentableCars
+--
+rentableCars: RentableCar[]
+--
+addCarToRental(vin: Vin, location: String) : RentableCar
+removeRentableCar(vin: Vin) : Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>846</x>
+      <y>324</y>
+      <w>180</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application entity&gt;&gt;
+RentableCar
+--
+location: String
+pricePerDay: Float
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>927</x>
+      <y>225</y>
+      <w>36</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>fontsize=10
+lt=-
+m1=1
+m2=0..*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>558</y>
+      <w>180</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;collection&gt;&gt;
+Cars
+--
+--
+getCar(vin: Vin): Car
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>477</x>
+      <y>558</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>fontsize=10
+lt=-
+m1=1
+m2=0..n
+provides methods for &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>603</x>
+      <y>558</y>
+      <w>171</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;domain entity&gt;&gt;
+Car
+--
+vin: Vin
+brand: String
+model: String
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>819</x>
+      <y>558</y>
+      <w>126</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;value object&gt;&gt;
+Vin
+--
+vin: String
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>270</x>
+      <y>513</y>
+      <w>702</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>DM-CarV2.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>765</x>
+      <y>585</y>
+      <w>72</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>60.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+</diagram>

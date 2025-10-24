@@ -1,0 +1,66 @@
+version: '3'
+services:
+  dm-car:
+    build: ../../dm-carv2.0
+    ports:
+      - "80:80"
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DATABASE=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  am-rentalmanagement:
+    build: ../../am-rentalmanagementv2.0
+    ports:
+      - "81:80"
+      - "9001:9001"
+    environment:
+      - GRPC_PORT=9001
+      - WRAPPED_GRPC_PORT=80
+      - ALLOWED_ORIGINS=*
+      - CAR_API_URL=http://dm-car:80
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DATABASE=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  am-fleetmanagement:
+    build: ../../am-fleetmanagementv1.0
+    ports:
+      - "82:80"
+      - "9002:9001"
+    environment:
+      - CAR_API_URL=http://dm-car:80
+      - GRPC_PORT=9001
+      - WRAPPED_GRPC_PORT=80
+      - RENTAL_MANAGEMENT_URL=am-rentalmanagement:9001
+      - ALLOWED_ORIGINS=*
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DATABASE=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:15.4
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+
+volumes:
+  postgres-data:

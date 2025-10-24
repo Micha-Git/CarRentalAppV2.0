@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>fontsize=18
+</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>10</x>
+      <y>220</y>
+      <w>350</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;application microservice&gt;&gt;
+AM-FleetManagementV1.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>50</x>
+      <y>80</y>
+      <w>280</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Remove Car from Fleet</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>720</x>
+      <y>220</y>
+      <w>330</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;application microservice&gt;&gt;
+AM-RentalManagementV2.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>780</x>
+      <y>450</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;database&gt;&gt;
+DB-Rentals</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>60</x>
+      <y>430</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;database&gt;&gt;
+DB-Fleets</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>170</x>
+      <y>110</y>
+      <w>290</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+/1/ rpc removeCarFromFleet(vin)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>320</y>
+      <w>280</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+/4/ Remove Car from DB by Vin</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>310</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+/3/ Remove Car from DB by Vin</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>240</y>
+      <w>390</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+/2/ rpc removeRentableCar(vin)</panel_attributes>
+    <additional_attributes>10.0;30.0;370.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>20</y>
+      <w>570</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Extended Component Diagram RemoveCarFromFleetV2.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
