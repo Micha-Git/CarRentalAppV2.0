@@ -3,7 +3,7 @@ AM-FleetManagement provides the functionality for the capability Management of t
 
 ## DESIGN
 
-[API Diagram AM-FleetManagementV1.0](https://gitlab.kit.edu/kit/cm/teaching/carrentalapp/carrentalappv2.0/0.doccarrentalappv2.0/-/blob/main/pages/ad_am-fleet_management_v1.0.md) (stored in 0.Doc of CarRentalAppV2.0)  
+[API Diagram AM-FleetManagementV1.0](../../pages/ad_am-fleet_management_v1.0.md) (stored in 0.Doc of CarRentalAppV2.0)  
 [API Specification AM-FleetManagementV1.0](./src/api/specification/api_specification_am_fleet_management.proto)  
 
 ## IMPLEMENTATION
