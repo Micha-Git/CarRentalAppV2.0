@@ -25,13 +25,13 @@ CarRentalApp is a microservice-based application which enables to rent a car fro
 [Component Diagram UI-CarRentalV2.0](./pages/cd_ui-car_rental_v2.0.md)  
 
 [API Diagram DM-CarV2.0](./pages/ad_dm-car_v2.0.md)  
-[API Specification DM-CarV2.0](https://github.com/Micha-Git/CarRentalAppV2.0/blob/main/services/dm-carv2.0/src/api/specification/openapi.yaml)
+[API Specification DM-CarV2.0](./services/dm-carv2.0/src/api/specification/openapi.yaml)
 
 [API Diagram AM-RentalManagementV2.0](./pages/ad_am-rental_management_v2.0.md)  
-[API Specification AM-RentalManagementV2.0](https://github.com/Micha-Git/CarRentalAppV2.0/blob/main/services/am-rentalmanagementv2.0/src/api/specification/api_specification_am_rental_management.proto)  
+[API Specification AM-RentalManagementV2.0](./services/am-rentalmanagementv2.0/src/api/specification/api_specification_am_rental_management.proto)  
 
 [API Diagram AM-FleetManagementV1.0](./pages/ad_am-fleet_management_v1.0.md)  
-[API Specification AM-FleetManagementV1.0](https://github.com/Micha-Git/CarRentalAppV2.0/blob/main/services/am-fleetmanagementv1.0/src/api/specification/api_specification_am_fleet_management.proto?ref_type=heads)  
+[API Specification AM-FleetManagementV1.0](./services/am-fleetmanagementv1.0/src/api/specification/api_specification_am_fleet_management.proto?ref_type=heads)  
 
 [Extended Component Diagram AddCarToFleetV2.0](./pages/ecd_add_car_to_fleet_v2.0.md)  
 [Extended Component Diagram RemoveCarFromFleetV2.0](./pages/ecd_remove_car_from_fleet_v2.0.md)  
@@ -41,13 +41,13 @@ CarRentalApp is a microservice-based application which enables to rent a car fro
 
 ## Implementation
 
-[Microservice Implementation DM-CarV2.0](https://github.com/Micha-Git/CarRentalAppV2.0/tree/main/services/dm-carv2.0)
+[Microservice Implementation DM-CarV2.0](./services/dm-carv2.0)
 
-[Microservice Implementation AM-RentalManagementV2.0](https://github.com/Micha-Git/CarRentalAppV2.0/tree/main/services/am-rentalmanagementv2.0)  
+[Microservice Implementation AM-RentalManagementV2.0](./services/am-rentalmanagementv2.0)  
 
-[Microservice Implementation AM-FleetManagementV1.0](https://github.com/Micha-Git/CarRentalAppV2.0/tree/main/services/am-fleetmanagementv1.0)  
+[Microservice Implementation AM-FleetManagementV1.0](./services/am-fleetmanagementv1.0)  
 
-[User Interface UI-CarRentalV2.0](https://github.com/Micha-Git/CarRentalAppV2.0/tree/main/services/ui-carrentalv2.0)  
+[User Interface UI-CarRentalV2.0](./services/ui-carrentalv2.0)  
 
 ## DEPLOYMENT AND OPERATIONS
 
