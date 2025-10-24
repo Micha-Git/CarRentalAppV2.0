@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package fleetmanagement;
+
+option go_package = "./pb";
+
+// Services Definition
+
+service FleetService {
+  rpc AddCarToFleet(AddCarToFleetRequest) returns (AddCarToFleetResponse) {}
+  rpc ListCarsInFleet(ListCarsInFleetRequest) returns (ListCarsInFleetResponse) {}
+  rpc RemoveCarFromFleet(RemoveCarFromFleetRequest) returns (RemoveCarFromFleetResponse) {}
+}
+
+service CarService {
+  rpc ViewCarInformation(ViewCarInformationRequest) returns (ViewCarInformationResponse) {}
+}
+
+// Request and Return messages
+
+message AddCarToFleetRequest {
+  Vin vin = 1;
+  string fleetId = 2;
+  string location = 3;
+}
+
+message AddCarToFleetResponse {
+  Car car = 1;
+  ErrorDetail error = 2;
+}
+
+message ListCarsInFleetRequest {
+  string fleetId = 1;
+}
+
+message ListCarsInFleetResponse {
+  repeated Car cars = 1;
+  ErrorDetail error = 2;
+}
+
+message RemoveCarFromFleetRequest {
+  Vin vin = 1;
+}
+
+message RemoveCarFromFleetResponse {
+  bool result = 1;
+  ErrorDetail error = 2;
+}
+
+message ViewCarInformationRequest {
+  Vin vin = 1;
+}
+
+message ViewCarInformationResponse {
+  Car car = 1;
+  ErrorDetail error = 2;
+}
+
+// Messages
+
+message Vin {
+  string vin = 1;
+}
+
+message Car {
+  Vin vin = 1;
+  string brand = 2;
+  string model = 3;
+}
+
+message Fleet {
+  string fleetId = 1;
+  repeated Car cars = 2;
+  string location = 3;
+  string fleetManager = 4;
+}
+
+message ErrorDetail {
+  string message = 1;
+  string details = 2;
+}
