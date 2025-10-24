@@ -5,7 +5,7 @@ The domain microservice in its Version V2.0 enables the access to basic informat
 
 [API Diagram DM-CarV2.0](../../pages/ad_dm-car_v2.0.md)  
 
-[API Specification DM-CarV2.0](/src/api/specification/openapi.yaml)  
+[API Specification DM-CarV2.0](./src/api/specification/openapi.yaml)  
 
 ## IMPLEMENTATION
 
