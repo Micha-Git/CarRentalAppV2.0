@@ -1,6 +1,6 @@
 # Folder Structure UI-CarRentalAppV2.0
 
-![](/figures/folder-structure.png)
+![](../figures/folder-structure.png)
 
 - **src**: Contains the source files of the angular procject.   
     - **modules**: Contains the angular modules which can be lazy-loaded. Each feature should be consided as a seperate module. Components, services, models and other functionality should be grouped to a module.
