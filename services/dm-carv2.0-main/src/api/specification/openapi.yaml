@@ -1,0 +1,51 @@
+openapi: 3.0.1
+info:
+  title: API Specification DM-Car
+  description: Specifies the endpoints provided by DM-Car. These endpoints provide basic functionalities such as creating and retrieving a car.
+  version: 2.0.0
+tags:
+  - name: Cars
+paths:
+  /cars/{vin}:
+    get:
+      operationId: GetCar
+      summary: Retrieve an existing car
+      tags:
+        - Cars
+      parameters:
+        - in: path
+          name: vin
+          schema:
+            $ref: '#/components/schemas/vin'
+          required: true
+          description: Identifier of a car
+
+      responses:
+        '200':
+          description: The car with the provided vin is retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/car'
+        '404':
+          description: No car with the provided vin exists.
+
+components:
+  schemas:
+    vin:
+      type: string
+      description: Identifier of a car
+      pattern: '^[A-HJ-NPR-Z0-9]{13}[0-9]{4}$'
+    car:
+      type: object
+      properties:
+        vin:
+          $ref: '#/components/schemas/vin'
+        brand:
+          type: string
+          description: Brand of a car
+          example: Mercedes
+        model:
+          type: string
+          description: Model of a car
+          example: A-Class
