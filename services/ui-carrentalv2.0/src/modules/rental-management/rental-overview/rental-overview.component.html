@@ -1,0 +1,50 @@
+<div class="rental-overview-container" *ngIf="localStorage.getItem('user') == 'customer'">
+  <div class="top-row">
+    <div class="text-container">
+      <div class="page-title">Rental Overview</div>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="no-rented-cars-container" *ngIf="rentals.length == 0; else rentedCarsContainer">
+      <div class="message">You have no rentals yet.</div>
+      <div class="rental-creation-link-button">
+        <a routerLink="/available-cars-list">List Available Cars</a>
+      </div>
+    </div>
+
+    <ng-template #rentedCarsContainer>
+      <div class="rented-cars-container">
+        <table>
+          <tr>
+            <th></th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>VIN</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let car of rentals;">
+            <td>
+              <div class="rented-car-img">
+                <img src="{{ car.logoUrl }}">
+              </div>
+            </td>
+            <td>{{ car.brand }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.vin }}</td>
+            <td>{{ formatDate(car.rentalStart) }}</td>
+            <td>{{ formatDate(car.rentalEnd) }}</td>
+            <td>{{ car.price }}</td>
+            <td>
+              <div class="cancel-rental-button">
+                <button (click)="cancelRental(car)">Cancel Rental</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </ng-template>
+  </div>
+</div>

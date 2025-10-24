@@ -1,0 +1,79 @@
+<div class="available-cars-list-container" *ngIf="localStorage.getItem('user') == 'customer'">
+  <div class="top-row">
+    <div class="text-container">
+      <div class="page-title">Available Cars</div>
+      <div class="filter-information">
+        <table *ngIf="searchFilters.availableFrom && searchFilters.availableTo">
+          <tr>
+            <th>Rental Period</th>
+            <td>
+              from <span class="bold">{{ formatTimestamp(searchFilters.availableFrom) }}</span>
+              to <span class="bold">{{ formatTimestamp(searchFilters.availableTo) }}</span>
+            </td>
+          </tr>
+          <tr>
+            <th>Rental Location</th>
+            <td>
+              in <span class="bold">{{ searchFilters.location }}</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="search-container"
+         *ngIf="!searchFilters.availableFrom || !searchFilters.availableTo; else listAvailableCarsContainer">
+      <div class="location-container">
+        <div class="location-label">Rental Location</div>
+        <input type="text" #location value="Karlsruhe" readonly>
+      </div>
+      <div class="date-selector">
+        <input type="date" #availableFrom title="Start date"/>
+        <input type="date" #availableTo title="End date"/>
+        <button type="button"
+                (click)="onSearchCars(availableFrom.valueAsDate, availableTo.valueAsDate, location.value)">
+          Search Cars
+        </button>
+      </div>
+    </div>
+    <ng-template #listAvailableCarsContainer>
+      <div class="no-available-cars-container" *ngIf="availableCars.length == 0; else availableCarsContainer">
+        <div class="message">No available cars were found for the specified rental period.</div>
+        <div class="rental-creation-link-button">
+          <button (click)="changePeriod()">Change Period</button>
+        </div>
+      </div>
+      <ng-template #availableCarsContainer>
+        <div class="available-cars-container">
+          <table>
+            <tr>
+              <th></th>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>VIN</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+            <tr *ngFor="let car of availableCars;">
+              <td>
+                <div class="available-car-img">
+                  <img src="{{ car.logoUrl }}">
+                </div>
+              </td>
+              <td>{{ car.brand }}</td>
+              <td>{{ car.model }}</td>
+              <td>{{ car.vin }}</td>
+              <td>{{ car.rentalPricePerDay }} €/Day</td>
+              <td>
+                <div class="rental-car-button">
+                  <button (click)="onRentalCar(car)">Rent car</button>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>

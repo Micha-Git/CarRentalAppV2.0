@@ -1,0 +1,112 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+
+.l-form {
+  background-image: radial-gradient(circle at top left, black, gray, white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  //height: max-content;
+
+}
+
+.main-title {
+    align-self: flex-start;
+    margin-top: 30px;
+    margin-left: 12.5% ;
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+}
+
+.form {
+  margin-top: 20px;
+  width: 75%;
+  height: max-content;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.form__title {
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+.form__div {
+  position: relative;
+  height: 80px;
+  margin-bottom: 1.5rem;
+}
+
+.form__input {
+  
+  max-width: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: medium;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+
+  outline: solid;
+  outline-color: #80868B;
+  outline-width: 2px;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+}
+.form__label {
+
+  position: absolute;
+  left: 1rem;
+  top: 30px;
+  padding: 0 0.25rem;
+  background-color: #fff;
+  color: var(--input-color);
+  font-size: medium;
+  transition: 0.3s;
+  
+}
+.form__button {
+    min-width: 175px;
+    padding: 0.75rem 2rem;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: medium;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form__button:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+/*Input focus move up label*/
+.form__input:focus + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  z-index: 10;
+  font-size: var(--small-font-size);
+  font-weight: bold;
+}
+
+/*Input focus*/
+.form__input:focus {
+  border: 2px solid var(--first-color);
+}

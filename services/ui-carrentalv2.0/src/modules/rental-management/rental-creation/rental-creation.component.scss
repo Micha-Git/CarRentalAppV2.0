@@ -1,0 +1,104 @@
+.rental-creation-component {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+
+  background-image: radial-gradient(circle at top left, black, gray, white);
+  overflow: auto;
+  height: calc(100% - 50px);
+
+  .top-row {
+    padding: 10px;
+    font-family: 'IstokWeb-Bold', sans-serif;
+
+    .text-container {
+      padding: 5px;
+
+      .page-title {
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+
+  .bottom-row {
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+
+
+    .car-information-container {
+
+      table {
+        background: #fafafa;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        text-align: left;
+        border-collapse: collapse;
+
+        tr {
+          border-bottom: #989898 solid 1px;
+
+          th, td {
+            padding: 10px;
+          }
+
+          th {
+            text-transform: uppercase;
+            color: #8f8f8f;
+          }
+
+          .car-logo {
+            display: flex;
+            justify-content: center;
+            height: 100px;
+
+            > img {
+              max-width: 100%;
+              max-height: 100%;
+            }
+          }
+
+          .rent-car-button {
+            flex: 1;
+            width: 100%;
+
+            button {
+              background: #4e4e4e;
+              width: 100%;
+            }
+
+            button:hover {
+              background: #0e0e0e;
+            }
+          }
+        }
+
+        tr:first-child {
+          border-bottom: #868686 solid 2px;
+        }
+
+        tr:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      .button-container {
+        padding: 10px;
+
+        .cancel-button {
+          background: red;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}

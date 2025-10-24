@@ -1,0 +1,43 @@
+<div class="background-container">
+
+  <div class="top-row-container">
+
+    <div class="left">
+      <div class="main-title">My fleet</div>
+    </div>
+    <div class="right">
+      <button class="button" (click)="showAddCar()" style="background-color: transparent; font-size: 30px;"> + Add Car
+      </button>
+    </div>
+  </div>
+
+
+  <div class="fleet-management-container">
+
+    <div class="grid-container">
+
+      <div *ngFor="let car of fleetCars">
+
+        <div class="grid-box">
+          <img src="assets/cars/dummycar.png" alt="Beschreibung des Bildes">
+          <div class="top-row-container">
+
+            <div class="mid">
+              <div class="text-container">
+                <div>Brand: {{ car.brand }}</div>
+                <div>Model: {{ car.model }}</div>
+                <div>VIN: {{ car.vin }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <button class="view-rentals-button" (click)="viewCarRentals(car.vin)">View Rentals</button>
+            <button class="close-button" (click)="removeCar(car.vin)"></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div *ngIf="localStorage.getItem('navBarVisibility') == 'true'" class="nav-bar-container">  
+  <div class="left">
+
+    <div class="logo">
+      <img src="../../../assets/logo.png" alt="icon"/>
+      <span>UI-CarRentalV2.0</span>
+    </div>
+  </div>
+  <div class="right">
+    <span routerLink="landing-page" (click)="hideNavBar()">Landing Page</span>
+    <div class="fleetManager-conatainer" *ngIf="localStorage.getItem('user') == 'fleetManager'">
+      <span routerLink="fleet-overview">Fleet Overview</span>
+    </div>
+    <div class="customer-container" *ngIf="localStorage.getItem('user') == 'customer'">
+      <span routerLink="rental-overview">Rental Overview</span>
+      <span routerLink="available-cars-list">List Available Cars</span>
+    </div>
+  </div>
+</div>

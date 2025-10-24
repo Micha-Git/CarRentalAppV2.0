@@ -1,0 +1,124 @@
+
+.background-container {
+  background-image: radial-gradient(circle at top left, black, gray, white);
+  width: 100%;
+  min-height: 100%;
+  height: max-content;
+
+.top-row-container {
+  max-width: 100%;
+  font-family: 'IstokWeb-Bold', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+
+  width: 100%;
+  background-color: transparent;
+
+  // Align items in a row. Center vertically. Align with max space between
+  display: flex;
+  flex-direction: row;
+  //align-items: center;
+  justify-content: space-between;
+  align-items: center;
+    
+  .main-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin: 30px;
+  }
+
+  // Right container
+  .right {
+
+    // Align vertically center. Align horizontal to thr right
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;    
+  }
+
+}
+
+ 
+ .fleet-management-container {
+
+    padding: 5px;
+   
+    .grid-container {
+
+      display: flex;
+      flex-direction: column;    
+      row-gap: 20px; 
+  
+    .grid-box {
+    
+      font-size: medium;
+      font-weight: bold;
+      height: 250px;
+
+  
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+      
+      border-radius: 15px;
+      border: 2px solid white;
+      box-sizing: border-box;
+      //transition: border-color 0.5s;
+  
+      background-color: white;
+
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start ;
+ 
+    }
+
+    .text-container {
+      margin-top: 30%;
+      margin-left: 10%;
+      row-gap: 20px;
+  
+      max-width: 40%;
+      justify-content: center;
+  
+      height: 100%;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: medium;
+    }
+
+    .grid-box img {
+      max-width: 30%;
+      object-fit: contain;
+      margin-left: 10px;    
+      align-self: center;  
+  }
+
+    .close-button {
+        
+      margin-top: 5px;
+      margin-right: 5px;
+      width: 30px;
+      height: 30px;
+      color: white; 
+      background-color: red; 
+      border-color: red;
+      padding: 10px 10px;
+      border-radius: 7px;
+
+      max-width: 100px;
+      max-height: 100px;
+
+      background-image: url("/assets/delete.png");
+      background-size: cover;
+
+    }
+    
+
+  .column:hover {
+    border-color: gray; /* Neue Hintergrundfarbe beim Hover */
+  }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="list-car-rentals-container">
+  <div class="top-row">
+    <div class="text-container">
+      <div class="page-title">List Car Rentals</div>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="no-rentals-container" *ngIf="carRentals.length == 0; else rentalsContainer">
+      <div class="message">This car is never rented.</div>
+    </div>
+
+    <ng-template #rentalsContainer>
+      <div class="car-rentals-container">
+        <table>
+          <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Customer</th>
+          </tr>
+          <tr *ngFor="let rental of carRentals">
+            <td>{{ formatDate(rental.startDate) }}</td>
+            <td>{{ formatDate(rental.endDate) }}</td>
+            <td>{{ rental.customer }}</td>
+          </tr>
+        </table>
+      </div>
+    </ng-template>
+  </div>
+</div>

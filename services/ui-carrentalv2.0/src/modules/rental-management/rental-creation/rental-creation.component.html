@@ -1,0 +1,53 @@
+<div class="rental-creation-component" *ngIf="localStorage.getItem('user') == 'customer'">
+  <div class="top-row">
+    <div class="text-container">
+      <div class="page-title">Rental Creation</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="car-information-container">
+      <table>
+        <tr>
+          <td colspan="2">
+            <div class="car-logo">
+              <img src="{{car.logoUrl}}">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Brand</th>
+          <td>{{ car.brand }}</td>
+        </tr>
+        <tr>
+          <th>Model</th>
+          <td>{{ car.model }}</td>
+        </tr>
+        <tr>
+          <th>VIN</th>
+          <td>{{ car.vin }}</td>
+        </tr>
+        <tr>
+          <th>From</th>
+          <td>{{ formatDate(filters.availableFrom) }}</td>
+        </tr>
+        <tr>
+          <th>To</th>
+          <td>{{ formatDate(filters.availableTo) }}</td>
+        </tr>
+        <tr>
+          <th>Rental Price</th>
+          <td>{{ car.rentalPricePerDay }} €/Day</td>
+        </tr>
+      </table>
+    </div>
+    <div class="buttons-container">
+      <div class="button-container">
+        <button class="confirm-button" (click)="onConfirm()">Confirm</button>
+      </div>
+      <div class="button-container">
+        <button class="cancel-button" (click)="onCancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="l-form">
+
+    <div class = "main-title">Add Car.</div>
+
+    <form action="" class="form">
+
+
+        <div class="form__div">
+            <input type="text" class="form__input" placeholder=" " #location title="location"/>
+            <label  class="form__label">Location</label>
+        </div>
+
+        <div class="form__div">
+            <input  class="form__input" placeholder=" " #vin title="vin"/>
+            <label for="" class="form__label">Vin</label>
+        </div>
+
+        <div class="form__div">
+            <input  class="form__input" placeholder=" " #fleetId title="fleetId"/>
+            <label for="" class="form__label">Fleet Id</label>
+        </div>
+
+        <input type="button" class="form__button" 
+        (click)="addCarToFleet(location.value, vin.value, fleetId.value)" value="Add Car To Fleet">
+    </form>
+</div>

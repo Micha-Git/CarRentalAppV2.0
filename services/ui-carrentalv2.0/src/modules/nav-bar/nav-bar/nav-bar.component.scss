@@ -1,0 +1,68 @@
+.nav-bar-container {
+  font-family: 'IstokWeb-Bold', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+
+  width: 100%;
+  height: 50px;
+
+  border-bottom: 1px solid lightgray;
+
+  // Align items in a row. Center vertically. Align with max space between
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  // Left container
+  .left {
+
+    // Align vertif
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      margin-left: 15px;
+      padding: 3px;
+
+      img {
+        width: 70px;
+      }
+    }
+
+    // Hover animation for the logo div
+    .logo:hover {
+      cursor: pointer;
+
+      border-radius: 10px; /* Abgerundete Ecken */
+      background-color: #0000000e;
+      -webkit-transition: background-color 50ms linear;
+      -ms-transition: background-color 50ms linear;
+      transition: background-color 50ms linear;
+    }
+  }
+
+  // Right container
+  .right {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    span {
+      margin-right: 20px;
+      &:hover {
+        border-bottom: 2px solid black;
+        cursor: pointer;
+      }
+    }
+  }
+}
