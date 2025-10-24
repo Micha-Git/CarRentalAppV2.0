@@ -1,0 +1,126 @@
+//AM-RentalManagementV2.0
+syntax = "proto3";
+
+package rentalmanagement;
+
+option go_package = "./pb";
+
+import "google/protobuf/timestamp.proto";
+
+service RentalsCollectionService {
+    rpc ListAvailableCars(ListAvailableCarsRequest) returns (ListAvailableCarsResponse) {}
+    rpc ListCarRentals(ListCarRentalsRequest) returns (ListCarRentalsResponse) {}
+    rpc ListCustomerRentals(ListCustomerRentalsRequest) returns (ListCustomerRentalsResponse) {}
+}
+
+service RentableCarsCollectionService {
+    rpc AddCarToRental(AddCarToRentalRequest) returns (AddCarToRentalResponse) {}
+    rpc RemoveRentableCar(RemoveRentableCarRequest) returns (RemoveRentableCarResponse) {}
+}
+
+service CustomerService{
+    rpc RentCar(RentCarRequest) returns (RentCarResponse) {}
+    rpc CancelRental(CancelRentalRequest) returns (CancelRentalResponse) {}
+}
+
+message ListAvailableCarsRequest {
+    google.protobuf.Timestamp startDate = 1;
+    google.protobuf.Timestamp endDate = 2;
+    string location = 3;
+}
+
+message ListAvailableCarsResponse {
+    repeated RentableCar cars = 1;
+    ErrorDetail error = 2;
+}
+
+message ListCarRentalsRequest {
+    Vin vin = 1;
+}
+
+message ListCarRentalsResponse {
+    repeated Rental rentals = 1;
+    ErrorDetail error = 2;
+}
+
+message ListCustomerRentalsRequest {
+    string customerId = 1;
+}
+
+message ListCustomerRentalsResponse {
+    repeated Rental rentals = 1;
+    ErrorDetail error = 2;
+}
+
+message AddCarToRentalRequest {
+    Vin vin = 1;
+    string location = 2;
+}
+
+message AddCarToRentalResponse {
+    RentableCar car = 1;
+    ErrorDetail error = 2;
+}
+
+message RemoveRentableCarRequest {
+    Vin vin = 1;
+}
+
+message RemoveRentableCarResponse {
+    bool result = 1;
+    ErrorDetail error = 2;
+}
+
+message RentCarRequest {
+    string customerId = 1;
+    google.protobuf.Timestamp startDate = 2;
+    google.protobuf.Timestamp endDate = 3;
+    Vin vin = 4;
+}
+
+message RentCarResponse {
+    Rental rental = 1;
+    ErrorDetail error = 2;
+}
+
+message CancelRentalRequest {
+    string customerId = 1;
+    string rentalId = 2;    // The name is different from the API diagram to avoid confusion
+}
+
+message CancelRentalResponse {
+    bool result = 1;
+    ErrorDetail error = 2;
+}
+
+message Customer {
+    string id = 1;
+    string name = 2;
+    repeated Rental rentals = 3;
+}
+
+message Rental {
+    string id = 1;
+    google.protobuf.Timestamp startDate = 2;
+    google.protobuf.Timestamp endDate = 3;
+    RentableCar car = 4;
+    float price = 5;
+    string customerId = 6;
+}
+
+message RentableCar {
+    Vin vin = 1;
+    string brand = 2;
+    string model = 3;
+    string location = 4;
+    float pricePerDay = 5;
+}
+
+message Vin {
+    string vin = 1;
+}
+
+message ErrorDetail {
+    string message = 1;
+    string details = 2;
+}

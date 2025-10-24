@@ -1,0 +1,51 @@
+version: '3'
+
+volumes:
+  postgres-data:
+
+networks:
+  rentalmanagementv2.0:
+
+services:
+  postgres:
+    image: postgres:15.4
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - rentalmanagementv2.0
+    expose:
+      - "5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+
+  dm-car:
+    build: ../dm-carv2.0
+    environment:
+      - PORT=80
+    networks:
+      - rentalmanagementv2.0
+    expose:
+      - "8080"
+
+  am-rentalmanagement:
+    build: .
+    environment:
+      - GRPC_PORT=8080
+      - WRAPPED_GRPC_PORT=80
+      - ALLOWED_ORIGINS=*
+      - CAR_API_URL=http://dm-car:80
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DATABASE=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "8080:8080"
+      - "80:80"
+    networks:
+      - rentalmanagementv2.0
+    depends_on:
+      postgres:
+        condition: service_healthy
