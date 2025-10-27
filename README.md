@@ -51,7 +51,3 @@ If you have any questions, feel free to contact "michael.schneider@kit.edu".
 [Microservice Implementation AM-FleetManagementV1.0](./services/am-fleetmanagementv1.0)  
 
 [User Interface UI-CarRentalV2.0](./services/ui-carrentalv2.0)  
-
-## DEPLOYMENT AND OPERATIONS
-
-[SPS Diagram CarRentalApp V2.0](./pages/sps_diagram_car_rental_app_v2.0.md)  
