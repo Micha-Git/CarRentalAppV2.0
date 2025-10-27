@@ -1,7 +1,5 @@
 # Terms Used
-
-The table below contains the new terms and definitions for CarRentalApp. Previous terms are found in the documentation [Terms Used](https://gitlab.kit.edu/kit/cm/teaching/carrentalapp/carrentalapp/-/blob/main/pages/terms_used_v1.0.md) of CarRentalAppV1.0.  
-Remark: The terms Register and Deregister added in V1.1 (https://gitlab.kit.edu/kit/cm/teaching/carrentalapp/0.doccarrentalappv1/-/blob/main/pages/terms_used_v1.1.md) are not relevant for V2.0.
+The table below provides definitions of key terms used in CarRentalApp.
 
 | Term                  | Definition                                                                                              | Remarks |
 | --------------------- | ------------------------------------------------------------------------------------------------------- | ------- |
