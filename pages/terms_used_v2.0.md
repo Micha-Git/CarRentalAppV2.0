@@ -5,8 +5,6 @@ Remark: The terms Register and Deregister added in V1.1 (https://gitlab.kit.edu/
 
 | Term                  | Definition                                                                                              | Remarks |
 | --------------------- | ------------------------------------------------------------------------------------------------------- | ------- |
-
-
 | Alice           | Name of the person who is the customer of BestRental |  
 | BestRental      | Name of the rental company that offers cars for rent |
 | Basic Car Information | Information about a car. Consists of brand, model, and VIN. |  |
