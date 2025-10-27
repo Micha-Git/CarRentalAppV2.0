@@ -1,4 +1,5 @@
 # UI-CarRentalV2.0
+UI-CarRentalV2.0 provides the user interface for CarRentalAppV2.0 and is implemented using Angular.
 
 ## DESIGN
 

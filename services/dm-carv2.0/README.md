@@ -1,6 +1,8 @@
 # DM-CarV2.0
 The domain microservice in its Version V2.0 enables the access to basic information of a car which is identified by its VIN. The information is provided via an external system ConnectedCars. In Version 2.0, the external system is  simulated by a [CSV file](src/infrastructure/connectedcars/ConnectedCars.csv).
 
+**Note: We removed the ".gitlab-ci.yml" from the template.**
+
 ## DESIGN
 
 [API Diagram DM-CarV2.0](../../pages/ad_dm-car_v2.0.md)  

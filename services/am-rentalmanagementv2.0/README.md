@@ -1,6 +1,8 @@
 # AM-RentalManagementV2.0
 AM-RentalManagement provides the functionality for the capability "Management of Rentals" via API endpoints dedicated to individual use cases.
 
+**Note: We removed the ".gitlab-ci.yml" from the template.**
+
 ## DESIGN 
 
 [API Diagram AM-RentalManagementV2.0](../../pages/ad_am-rental_management_v2.0.md) (stored in 0.Doc of CarRentalAppV2.0)  

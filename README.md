@@ -1,6 +1,9 @@
 # CarRentalAppV2.0
-
 CarRentalApp is a microservice-based application which enables to rent a car from a rental company. In comnparison to its earlier version, CarRentalAppV2.0 is extended by an application microservice AM-FleetManagement by which the cars to be rented are organized in fleets.
+
+**Note: For simplicity, all microservices of the application are included in this single repository (under the services folder). In a real deployment, each microservice would have its own repository. The application is built using Go and Angular, and managed with GitLab. You can run the application locally by following the setup instructions provided for each implemented microservice.** 
+
+If you have any questions, feel free to contact "michael.schneider@kit.edu".
 
 ## ANALYSIS
 
