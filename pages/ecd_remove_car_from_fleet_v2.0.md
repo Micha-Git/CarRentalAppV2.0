@@ -1,5 +1,7 @@
 # Extended Component Diagram RemoveCarFromFleetV2.0
 
+Hint: The extended component diagram helps illustrate the interactions between the involved microservices.
+
 ![](../figures/ecd_remove_car_from_fleet_v2.0.png)
 
 (/1/ rpc removeCarFromFleet(vin)) The fleet manager removes the car from a fleet. Since one car is assigned to at most one fleet, a vin uniquely identifies the car to be removed from the fleet.

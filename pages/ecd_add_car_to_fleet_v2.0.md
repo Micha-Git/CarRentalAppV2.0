@@ -1,5 +1,7 @@
 # Extended Component Diagram AddCarToFleetV2.0
 
+Hint: The extended component diagram helps illustrate the interactions between the involved microservices.
+
 ![](../figures/ecd_add_car_to_fleet_v2.0.png)
 
 (/1/ rpc addCarToFleet(vin, fleetId)) The fleet manager adds a new car to a fleet by providing a vin of the car and a fleet id of the fleet he owns and want to add the car. 
