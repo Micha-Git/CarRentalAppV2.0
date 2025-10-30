@@ -11,6 +11,7 @@ The table below provides definitions of key terms used in CarRentalApp.
 | Customer        | Role of a person which describes a relationship with an organization. |
 | Fleet                 | A fleet is a collection of cars. | |
 | Fleet Manager         | Role which is responsible for a fleet. |   |   
+| Fred                  | Name of the fleet manager at BestRental|   |  
 | Location              | The location information of the car or fleet. It consists of the name of the city where a fleet is stationed at. |   |
 | Rental          | Action of renting a car for a rental period which is defined by a start date and an end date |
 | Rental Period   | Date consisting of the start date and the end date of the rental |
