@@ -36,9 +36,6 @@ If you have any questions, feel free to contact "michael.schneider@kit.edu".
 [API Diagram AM-FleetManagementV1.0](./pages/ad_am-fleet_management_v1.0.md)  
 [API Specification AM-FleetManagementV1.0](./services/am-fleetmanagementv1.0/src/api/specification/api_specification_am_fleet_management.proto?ref_type=heads)  
 
-[Extended Component Diagram AddCarToFleetV2.0](./pages/ecd_add_car_to_fleet_v2.0.md)  
-[Extended Component Diagram RemoveCarFromFleetV2.0](./pages/ecd_remove_car_from_fleet_v2.0.md)  
-
 [Orchestration Diagram AddCartoFleetV2.0](./pages/od_add_car_to_fleet_v2.0.md)  
 [Orchestration Diagram RemoveCarfromFleetV2.0](./pages/od_remove_car_from_fleet_v2.0.md)  
 
