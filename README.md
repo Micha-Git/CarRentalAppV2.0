@@ -14,13 +14,16 @@ If you have any questions, feel free to contact "michael.schneider@kit.edu".
 
 [Use Case Diagram V2.0](pages/use_case_diagram_v2.0.md)  
 
-[Use Case "List Car Rentals" V2.0](./pages/uc_list_car_rentals_v2.0.md)  
 [Use Case "Add Car to Fleet" V2.0](./pages/uc_add_car_to_fleet_v2.0.md)  
-[Use Case "Remove Car from Fleet" V2.0](./pages/uc_remove_car_from_fleet_v2.0.md)  
+[Use Case "List Cars in Fleet V2.0"](./pages/uc_list_cars_in_fleet_v2.0.md)  
+[Use Case "View Car Information V2.0"](./pages/uc_view_car_information_v2.0.md)  
+[Use Case "Remove Car from Fleet V2.0"](./pages/uc_remove_car_from_fleet_v2.0.md)  
 
 [Use Case "List Available Cars" V2.0](./pages/uc_list_available_cars_v2.0.md)  
 [Use Case "Rent a Car" V2.0](./pages/uc_rent_a_car_v2.0.md)  
-[Use Case "List Customer Rentals" V2.0](./pages/uc_list_customer_rentals_v2.0.md)
+[Use Case "Cancel Rental" V2.0](./pages/uc_cancel_rental_v2.0.md)   
+[Use Case "List Customer Rentals" V2.0](./pages/uc_list_customer_rentals_v2.0.md)  
+[Use Case "List Car Rentals" V2.0](./pages/uc_list_car_rentals_v2.0.md)  
 
 ## DESIGN
 
